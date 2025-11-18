@@ -20,7 +20,8 @@ pipeline {
 */
         stage('Desplegar') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker-compose down'
+                sh 'docker-compose up -d --build'
             }
         }
     }
